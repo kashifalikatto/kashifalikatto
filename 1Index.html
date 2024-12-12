@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 800px;
+      margin: 50px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .slider-container .nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slider-container .nav button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .slider-container .nav button:hover {
+      background-color: black;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .caption a {
+      color: yellow;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slides">
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="Nature">
+        <div class="caption"><a href="https://www.nationalgeographic.com" target="_blank">Explore Nature</a></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="Technology">
+        <div class="caption"><a href="https://www.techcrunch.com" target="_blank">Tech News</a></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1541698444083-023c97d3f4b6?crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop" alt="Travel">
+        <div class="caption"><a href="https://www.lonelyplanet.com" target="_blank">Travel Guides</a></div>
+      </div>
+    </div>
+    <div class="nav">
+      <button id="prev">❮ Prev</button>
+      <button id="next">Next ❯</button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slide = document.querySelectorAll('.slide');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+
+    let index = 0;
+
+    function showSlide(n) {
+      index += n;
+      if (index < 0) index = slide.length - 1;
+      if (index >= slide.length) index = 0;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener('click', () => showSlide(-1));
+    next.addEventListener('click', () => showSlide(1));
+  </script>
+</body>
+</html>

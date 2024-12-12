@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: all 0.5s ease;
+        }
+
+        form:focus-within {
+            border-color: #4caf50;
+            background-color: #f1f8e9;
+            box-shadow: 0 8px 15px rgba(0, 128, 0, 0.3);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <h2>Interactive Form</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

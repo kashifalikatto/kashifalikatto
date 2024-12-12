@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Form with Full Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #f6d365, #fda085);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form id="detailsForm">
+        <h2>Personal Details Form</h2>
+
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span>
+
+        <!-- Gender -->
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <span id="genderError" class="error"></span>
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120">
+        <span id="ageError" class="error"></span>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <!-- Contact Number -->
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" placeholder="e.g., +923001234567">
+        <span id="contactError" class="error"></span>
+
+        <!-- Social Links -->
+        <label for="facebook">Facebook:</label>
+        <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/your-profile">
+
+        <label for="instagram">Instagram:</label>
+        <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/your-profile">
+
+        <label for="x">X (formerly Twitter):</label>
+        <input type="url" id="x" name="x" placeholder="https://twitter.com/your-profile">
+
+        <!-- Message -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Enter your message here..."></textarea>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('detailsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            let isValid = true;
+
+            // Name validation
+            const name = document.getElementById('name').value.trim();
+            const nameError = document.getElementById('nameError');
+            if (name === '') {
+                nameError.textContent = 'Name is required.';
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+            }
+
+            // Gender validation
+            const gender = document.getElementById('gender').value;
+            const genderError = document.getElementById('genderError');
+            if (gender === '') {
+                genderError.textContent = 'Gender is required.';
+                isValid = false;
+            } else {
+                genderError.textContent = '';
+            }
+
+            // Age validation
+            const age = document.getElementById('age').value;
+            const ageError = document.getElementById('ageError');
+            if (age === '' || age <= 0 || age > 120) {
+                ageError.textContent = 'Enter a valid age.';
+                isValid = false;
+            } else {
+                ageError.textContent = '';
+            }
+
+            // Contact Number validation
+            const contact = document.getElementById('contact').value.trim();
+            const contactError = document.getElementById('contactError');
+            const contactRegex = /^\+?[0-9]{10,15}$/;
+            if (!contactRegex.test(contact)) {
+                contactError.textContent = 'Enter a valid contact number.';
+                isValid = false;
+            } else {
+                contactError.textContent = '';
+            }
+
+            // Final form submission
+            if (isValid) {
+                alert('Form submitted successfully!');
+                this.submit(); // Uncomment this line to enable actual form submission
+            }
+        });
+    </script>
+</body>
+</html>

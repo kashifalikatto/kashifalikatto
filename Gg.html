@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Multimedia with CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+
+        audio, video, iframe {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            border: 5px solid #4CAF50;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Multimedia Example</h1>
+
+        <!-- Audio Example -->
+        <h2>Audio</h2>
+        <audio controls>
+            <source src="audio-file.mp3" type="audio/mpeg">
+            <source src="audio-file.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Video Example -->
+        <h2>Local Video</h2>
+        <video controls width="600">
+            <source src="video-file.mp4" type="video/mp4">
+            <source src="video-file.ogg" type="video/ogg">
+            Your browser does not support the video element.
+        </video>
+
+        <!-- YouTube Video -->
+        <h2>YouTube Video</h2>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/fR7WrlUM3FE" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+
+        <!-- Image Example -->
+        <h2>Image</h2>
+        <img src="image-file.jpg" alt="Example Image">
+    </div>
+</body>
+</html>

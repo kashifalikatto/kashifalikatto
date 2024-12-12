@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Curriculum Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    nav {
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    main {
+      display: flex;
+      padding: 1rem;
+    }
+
+    section {
+      flex: 3;
+      padding-right: 1rem;
+    }
+
+    aside {
+      flex: 1;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      border-left: 1px solid #ddd;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML Curriculum Demo</h1>
+    <p>Learning HTML, step by step</p>
+    <nav>
+      <a href="#text">Text</a>
+      <a href="#media">Media</a>
+      <a href="#tables">Tables</a>
+      <a href="#lists">Lists</a>
+      <a href="#forms">Forms</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2 id="text">Text Formatting</h2>
+      <p><b>Bold text</b>, <i>italic text</i>, <u>underlined text</u>.</p>
+      <hr>
+
+      <h2 id="media">Multimedia</h2>
+      <p>Embedded audio and video:</p>
+
+      <!-- Audio Example -->
+      <h3>Audio</h3>
+      <audio controls>
+        <source src="katto1.mp3" type="audio/mpeg">
+        <source src="katto1.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Video Example -->
+      <h3>Video</h3>
+      <video controls width="600">
+        <source src="katto.mp4" type="video/mp4">
+        <source src="katto.ogg" type="video/ogg">
+        Your browser does not support the video element.
+      </video>
+    </section>
+    <aside>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#text">Text Formatting</a></li>
+        <li><a href="#media">Multimedia</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#forms">Forms</a></li>
+      </ul>
+    </aside>
+  </main>
+</body>
+</html>
